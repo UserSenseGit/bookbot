@@ -1,5 +1,5 @@
 def sort_on(item):
-    return item["num"]
+    return item[1]
 
 def counting_words(text):
     words = text.split()
@@ -18,10 +18,9 @@ def counting_characters(text: str) -> dict[str, int]:
 
     return (counts)
 
-def sorted_dictionaries(counts: dict[str, int]):
+def chars_dict_to_sorted_list(counts):
     results = []
     for ch, n in counts.items():
-        if ch.isalpha() == True:
-            results.append({"char": ch, "num": n})
+            results.append((ch,n))
     results.sort(key=sort_on, reverse=True)
     return results
